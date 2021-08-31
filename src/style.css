@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: 0;
+  box-shadow: none;
 }
 
 body {
@@ -64,6 +64,7 @@ ul li:nth-child(even) {
 input[type='text'] {
   padding: 0.2rem;
 }
+
 .add {
   width: 30%;
   padding: 0.5rem;
