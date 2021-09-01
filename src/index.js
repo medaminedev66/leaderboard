@@ -1,40 +1,37 @@
-import { create, forEach } from 'lodash';
 import './style.css';
 
 const scores = document.querySelector('.scores > ul');
 const getAPIData = () => {
   async function getFetch() {
-    let response = await fetch(
+    const response = await fetch(
       'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/9I754jQkwVXa66yLA2rE/scores',
     );
     if (!response.ok) {
       throw new Error(`API error! status: ${response.status}`);
     }
-    return await response.json();
+    const data = await response.json();
+    return data;
   }
-  getFetch()
-    .then((data) => {
-      //   console.log(data.result[0]);
-      data.result.forEach((player) => {
-        console.log(player);
-        const li = document.createElement('li');
-        const playerName = document.createElement('p');
-        const playerScore = document.createElement('p');
-        li.appendChild(playerName);
-        li.appendChild(playerScore);
-        scores.appendChild(li);
-        playerName.innerText = player.user;
-        playerScore.innerText = player.score;
-      });
-    })
-    .catch((e) => console.log(e));
+  getFetch().then((data) => {
+    //   console.log(data.result[0]);
+    data.result.forEach((player) => {
+      const li = document.createElement('li');
+      const playerName = document.createElement('p');
+      const playerScore = document.createElement('p');
+      li.appendChild(playerName);
+      li.appendChild(playerScore);
+      scores.appendChild(li);
+      playerName.innerText = player.user;
+      playerScore.innerText = player.score;
+    });
+  });
+  // .catch((e) => return e);
 };
 document.querySelector('.add').addEventListener('click', () => {
   const nameInput = document.querySelector('.name').value;
   const scoreInput = document.querySelector('.score').value;
-  console.log(nameInput, scoreInput);
   async function saveFetch() {
-    let response = await fetch(
+    const response = await fetch(
       'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/9I754jQkwVXa66yLA2rE/scores',
       {
         method: 'POST',
@@ -50,9 +47,11 @@ document.querySelector('.add').addEventListener('click', () => {
     if (!response.ok) {
       throw new Error(`API error! status: ${response.status}`);
     }
-    return await response.json();
+    const data = await response.json();
+    return data;
   }
-  saveFetch().then((json) => console.log(json));
+  saveFetch();
+  //   saveFetch().then((json) => console.log(json));
   document.querySelector('.name').value = '';
   document.querySelector('.score').value = '';
 });
