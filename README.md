@@ -4,7 +4,7 @@
 
 > A simple App that displays scores submitted by different players. It also allows you to submit your score.
 
-![screenshot](./)
+![screenshot](./screenshot.JPG)
 
 ## Built With
 

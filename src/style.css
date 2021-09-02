@@ -79,6 +79,9 @@ ul li:nth-child(even) {
 
 input {
   padding: 0.2rem;
+  border-radius: 0.5rem;
+  border: none;
+  min-height: 1.5rem;
 }
 
 .add {
