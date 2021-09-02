@@ -5,8 +5,9 @@
 }
 
 body {
-  margin: 7rem;
+  margin: 4rem;
   font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(to bottom, rgb(70, 92, 219), rgb(139, 112, 214));
 }
 
 main {
@@ -15,18 +16,22 @@ main {
 }
 
 header {
+  color: white;
   font-size: xx-large;
   margin-bottom: 2rem;
 }
 
 .recent-scores {
-  flex: 1;
+  flex: 2;
   padding: 1rem;
 }
 
 .add-your-score {
+  display: flex;
+  flex-direction: column;
   flex: 1;
   padding: 1rem;
+  height: auto;
 }
 
 .title-scores {
@@ -34,23 +39,33 @@ header {
   justify-content: space-between;
 }
 
+.title-scores h2 {
+  color: white;
+}
+
 .scores {
+  color: rgb(51, 51, 51);
   margin-top: 1rem;
   border: 2px slategray solid;
+  border-radius: 1rem;
+  padding: 1rem 0 1rem 0;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 ul {
   text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 li {
   padding: 0.5rem;
   display: flex;
   gap: 0.5rem;
+  justify-content: space-between;
 }
 
 ul li:nth-child(even) {
-  background-color: lightgrey;
+  background-color: rgba(255, 255, 255, 0.212);
 }
 
 .form {
@@ -59,18 +74,41 @@ ul li:nth-child(even) {
   display: flex;
   flex-direction: column;
   width: 100%;
+  justify-self: center;
 }
 
 input {
   padding: 0.2rem;
+  border-radius: 0.5rem;
+  border: none;
+  min-height: 1.5rem;
 }
 
 .add {
-  width: 30%;
   padding: 0.5rem;
   align-self: flex-end;
+  border-radius: 1rem;
+  background: linear-gradient(to right, rgb(139, 112, 214), rgb(135, 96, 241));
+  color: white;
+  border: 1px solid white;
 }
 
 .refresh {
+  color: white;
   padding: 0.5rem;
+  border-radius: 1rem;
+  background: linear-gradient(to right, rgb(139, 112, 214), rgb(135, 96, 241));
+  border: 1px solid white;
+}
+
+.refresh:hover {
+  border: 2px solid white;
+}
+
+.add:hover {
+  border: 2px solid white;
+}
+
+.add-your-score h2 {
+  color: white;
 }
