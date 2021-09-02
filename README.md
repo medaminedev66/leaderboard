@@ -12,7 +12,7 @@
 
 ## Live Demo
 
-[Live Demo Link]()
+[Live Demo Link](https://medaminedev66.github.io/leaderboard/)
 
 ## Getting Started
 
