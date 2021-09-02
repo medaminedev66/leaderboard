@@ -61,7 +61,7 @@ ul li:nth-child(even) {
   width: 100%;
 }
 
-input[type='text'] {
+input {
   padding: 0.2rem;
 }
 
